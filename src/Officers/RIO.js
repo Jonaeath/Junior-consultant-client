@@ -1,52 +1,19 @@
+import { Radio } from '@material-tailwind/react';
 import React from 'react';
 
-const Home = () => {
-    const handeMyfrom = event =>{
+
+const CSO = () => {
+    
+    const handelMyCSOfrom = event =>{
         event.preventDefault();
-        const form = event.target;
-        const id = form.id.value;
-        const name = form.name.value;
-        const designation = form.designation.value;
-        const deptName = form.deptName.value;
-        const email = form.email.value;
-        console.log(id,name,designation,deptName,email);
-
-    //     const sentMyData = {
-    //         id,
-    //         name,
-    //         designation,
-    //         deptName,
-    //         email,
-    //     }
-
-    //     //    Data send to Mongodb, Booking data or information
-
-    //     fetch('http://localhost:5000/sentData',{
-    //         method:'POST',
-    //         headers:{
-    //             'content-type':'application/json'
-    //         },
-    //         body: JSON.stringify(SendingData)
-    //     }) 
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data)
-    //         if(data.acknowledged){
-    //             alert("Your Data is send successfully")
-                
-    //         }
-
-    //     })
-    //     .catch(error =>console.error(error))
-    // }
     }
 
-    
     return (
-        <div className="relative flex flex-col justify-center h-screen overflow-hidden">
+        <div>
+         <div className="relative flex flex-col justify-center pt-1">
         <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-            <h1 className="text-3xl font-semibold text-center text-purple-700">Question One</h1>
-            <form onSubmit={handeMyfrom} className="space-y-4">
+            <h1 className="text-3xl font-semibold text-center text-purple-700">Report Initiating Officer(RIO)</h1>
+            <form onSubmit={handelMyCSOfrom} className="space-y-4">
                 <div>
                 <label className="label">
                     <span className="text-base label-text">ID</span>
@@ -103,13 +70,32 @@ const Home = () => {
                     <input type="text" placeholder="Activity that your work last year" className="w-full input input-bordered input-primary" />
                 </div>
                 <div>
-                    <button className="btn btn-block btn-primary">Submit to Rio</button>
+                  <h2>GOOD?</h2>  
+                <div className="flex justify-center gap-10">
+                     <Radio name="type" label="Yes" />
+                     <Radio name="type" label="No" defaultChecked />
+                </div>
+                <div>
+                    <label className="label">
+                        <span className="text-base label-text">Marks</span>
+                    </label>
+                    <input type="text" placeholder="Marks" className="w-1/2 input input-bordered input-primary" />
+                </div>
+                </div>
+                <div>
+                    <button className="btn btn-block btn-primary">Submit to CSO</button>
                 </div>
                 
             </form>
+                    </div>
         </div>
-        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+
+       </div>
     );
 };
 
-export default Home;
+export default CSO;
